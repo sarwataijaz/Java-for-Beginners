@@ -29,7 +29,7 @@ class Shopping extends Website {
     }
     @Override
     void printMSG() {
-        System.out.println("Ecommerce website is ready to use!");
+        System.out.println("Shopping website is ready to use!");
     }
 
     void displayStocks() {
@@ -41,9 +41,11 @@ class Shopping extends Website {
 class Example3 {
     public static void main(String[] args) {
         Website website = new Website();
-        Website shopping = new Shopping();
+        Website shopping = new Shopping(); //  the reference type determines which methods and members are accessible at compile time.
+                                            // we can only access the overridden methods of the child class
 
         website.assignValue(5, 10);
+        shopping.printMSG();
         ((Shopping)shopping).assignValue(5,11, 50); // casted so we can access instances of Shopping
         ((Shopping)shopping).displayStocks();
     }
