@@ -1,9 +1,9 @@
 import java.util.*;
 public class Car {
 
-    public String colour;
-    public String carType;
-    public int carCapacity;
+    protected String colour;
+    protected String carType;
+    protected int carCapacity;
 
     public Car() {
         carType = "Manual";
@@ -40,6 +40,7 @@ class AutomatedCar extends Car {
 
 class SportsCar extends AutomatedCar {
 
+    // overriden the method of automated car class
     public void changeGear() {
         System.out.println("Gears are shifted either manually or automatically.");
     }
@@ -50,7 +51,7 @@ class Example2 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Choose tour car type: 1-Manual, 2-Automatic, 3-Sports");
+        System.out.println("Choose your car type: 1-Manual, 2-Automatic, 3-Sports");
         int n = sc.nextInt();
 
         String colour;
@@ -64,14 +65,15 @@ class Example2 {
                 Car c1 = new Car();
                 System.out.println("Enter colour: ");
                 colour = sc.nextLine();
-                c1.colour = colour;
+                c1.setColour(colour); 
 
 
                 System.out.println("Enter capacity: ");
                 capacity = sc.nextInt();
-                c1.carCapacity = capacity;
+                c1.setCarCap(capacity);;
 
                 c1.display();
+                c1.changeGear();
 
                 break;
             }
@@ -83,13 +85,14 @@ class Example2 {
 
                 System.out.println("Enter colour: ");
                 colour = sc.nextLine();
-                automatedCar.colour = colour;
+                automatedCar.setColour(colour);
 
                 System.out.println("Enter capacity: ");
                 capacity = sc.nextInt();
-                automatedCar.carCapacity = capacity;
+                automatedCar.setCarCap(capacity);;
 
                 automatedCar.display();
+                automatedCar.changeGear();
 
                 break;
             }
@@ -100,13 +103,14 @@ class Example2 {
 
                 System.out.println("Enter colour: ");
                 colour = sc.nextLine();
-                sportsCar.colour = colour;
+                sportsCar.setColour(colour);
 
                 System.out.println("Enter capacity: ");
                 capacity = sc.nextInt();
-                sportsCar.carCapacity = capacity;
+                sportsCar.setCarCap(capacity);
 
                 sportsCar.display();
+                sportsCar.changeGear();
 
                 break;
             }
