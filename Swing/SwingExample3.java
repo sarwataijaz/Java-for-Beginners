@@ -9,7 +9,7 @@ class Example {
         JFrame f = new JFrame("Java Swing");
         JButton b = new JButton(new ImageIcon("D:/JAVAA/Swing/icon.jpg")); // providing path of the icon we want to display)
         
-        b.setBounds(100,100,100,40);
+        b.setBounds(80,100,100,40);
         f.add(b);
         f.setSize(400,400);
         f.setLayout(null);
@@ -22,6 +22,8 @@ class Example {
                 tf.setText("WELCOME!");   
             }
         }); 
+
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 } 
 
