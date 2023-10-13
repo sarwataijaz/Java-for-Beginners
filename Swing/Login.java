@@ -1,38 +1,26 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-abstract class Graphics extends JFrame {
+public class Login extends JFrame implements ActionListener {
 
-    abstract void addGraphics();
-    abstract void setSizes();
-
-     void enableOn() {
-
-         setSize(400,400);
-         setLayout(null);
-         setVisible(true);
-         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-}
-public class Login extends Graphics implements ActionListener {
-
-  // aggregation
         private String userName;
         private String password;
-        JTextField text;
-        JPasswordField pass;
-        JLabel userLabel;
-        JLabel passLabel;
+        private JTextField text;
+        private JPasswordField pass;
+        private JLabel userLabel;
+        private JLabel passLabel;
 
-        JLabel result;
-        JButton okButton;
-    void setLoginCrediantials(String userName, String password) {
-             this.userName = userName;
-             this.password = password;
+        private JLabel result;
+        private JButton okButton;
+
+
+        void setLoginCredentials(String userName, String password) {
+            this.userName = userName;
+            this.password = password;
         }
-
-        void addGraphics() {
+        void LoginMenu() {
 
              text = new JTextField();
              pass = new JPasswordField();
@@ -45,6 +33,26 @@ public class Login extends Graphics implements ActionListener {
             okButton.addActionListener(this);
             text.getText();
             pass.getPassword();
+
+            userLabel.setBounds(100,100,100,30);
+            text.setBounds(170,100,100,30);
+            passLabel.setBounds(100,150,100,30);
+            pass.setBounds(170,150,100,30);
+            result.setHorizontalAlignment(JLabel.CENTER);
+            result.setSize(400,100);
+            okButton.setBounds(100,200,95,30);
+
+            add(userLabel);
+            add(passLabel);
+            add(text);
+            add(pass);
+            add(okButton);
+            add(result);
+
+            setLayout(null);
+            setSize(400,400);
+            setVisible(true);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
 
     @Override
@@ -62,66 +70,9 @@ public class Login extends Graphics implements ActionListener {
              }
     }
 
-     public void setSizes() {
-
-     }
-
-    @Override
-    void enableOn() {
-        getContentPane().removeAll();
-        JPanel newPanel = new JPanel();
-        addGraphics();
-        setSizes();
-
-        newPanel.add(new JLabel("Login Page"));
-        newPanel.add(text);
-        newPanel.add(pass);
-        newPanel.add(userLabel);
-        newPanel.add(passLabel);
-        newPanel.add(result);
-        newPanel.add(okButton);
-
-        add(text);
-        add(newPanel, BorderLayout.CENTER);
-
-        revalidate();
-        repaint();
-    }
-}
-
-class Main extends Graphics implements ActionListener {
-
-    JLabel welcomeText;
-    JRadioButton loginButton;
-    JRadioButton signupButton;
-    JButton button;
-    ButtonGroup group;
-    void addGraphics() {
-        loginButton = new JRadioButton();
-        signupButton = new JRadioButton();
-        group = new ButtonGroup();
-
-        button = new JButton("Select");
-        welcomeText = new JLabel("WELCOME TO LOGIN AND REGISTRATION SYSTEM");
-        button.addActionListener(this);
-
-    }
     public static void main(String[] args) {
-
-    }
-
-    void setSizes(){
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        if(loginButton.isSelected()) {
-            getContentPane().removeAll();
-
-            Login login = new Login();
-            login.enableOn();
-        }
+        new Login();
     }
 }
+
+
