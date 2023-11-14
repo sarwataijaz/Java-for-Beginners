@@ -20,6 +20,9 @@ import java.io.IOException;
 
 public class HelloController {
 
+    //ImageView is a Node for printing images loaded with 'Image'
+    // Image = photo
+    // ImageView = frame
     @FXML
     ImageView image2;
     @FXML
