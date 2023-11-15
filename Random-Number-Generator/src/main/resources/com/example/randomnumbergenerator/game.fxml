@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.randomnumbergenerator.HelloController">
+   <children>
+      <AnchorPane fx:id="pane2" layoutX="35.0" layoutY="37.0" prefHeight="520.0" prefWidth="665.0">
+         <children>
+            <Label layoutX="28.0" layoutY="42.0" prefHeight="17.0" prefWidth="665.0" text="Result:">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8997a334" height="160.0" layoutX="7.0" layoutY="160.0" stroke="BLACK" strokeType="INSIDE" width="391.0" />
+            <Label fx:id="result" layoutX="28.0" layoutY="100.0" prefHeight="23.0" prefWidth="208.0" textFill="#1f1414">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="193.0" prefHeight="17.0" prefWidth="130.0" text="Lower Limit:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="244.0" prefHeight="31.0" prefWidth="118.0" text="Upper Limit:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lowerLimit" layoutX="162.0" layoutY="196.0" />
+            <TextField fx:id="upperLimit" layoutX="162.0" layoutY="247.0" />
+            <Button fx:id="generate" layoutX="228.0" layoutY="399.0" mnemonicParsing="false" onAction="#generateRandom" prefHeight="25.0" prefWidth="257.0" text="Generate" textFill="#74985c">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

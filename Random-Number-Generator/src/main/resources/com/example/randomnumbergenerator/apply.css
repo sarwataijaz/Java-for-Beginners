@@ -1,0 +1,16 @@
+.root {
+       -fx-background-color: #D2B48C;
+}
+
+#generate{
+        -fx-background-color: #4CAF50;
+        -fx-text-fill: white;
+}
+
+#pane {
+    -fx-background-color: #D2B48C;
+}
+#pane2 {
+    -fx-background-color: #D2B48C;
+}
+
