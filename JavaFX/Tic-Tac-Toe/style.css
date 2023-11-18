@@ -1,0 +1,42 @@
+ .welcome-bg {
+    -fx-background-image: url("file:/D:/pink4.jpg");
+ }
+ .button-continue {
+    -fx-background-color: #a35555;
+    -fx-background-radius: 50px;
+ }
+ .button-continue:hover {
+    -fx-background-color: #eeef86;
+ }
+ .button-info {
+    -fx-border-radius: 50px;
+    -fx-background-color: transparent;
+    -fx-border-color: #e04e4e;
+ }
+ .button-info:hover {
+    -fx-background-color: #eeef86;
+    -fx-background-radius: 50px;
+ }
+ .textField-players{
+    -fx-border-color: #f28f8f;
+    -fx-border-radius: 50px;
+    -fx-background-color: #ddb8b8;
+    -fx-background-radius: 50px;
+    -fx-text-inner-color: #fbf3e8;
+    -fx-prompt-text-fill: #fbf3e8;
+
+ }
+
+ .button-play {
+    -fx-background-color: #db8686;
+    -fx-border-color: #f65454;
+ }
+ .button-play:hover {
+    -fx-background-color: #e0d5d5;
+ }
+ .gridLines {
+    -fx-background-color: #f69f9f;
+ }
+ .gridCells {
+    -fx-background-color: transparent;
+ }
