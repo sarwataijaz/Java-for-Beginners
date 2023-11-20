@@ -10,16 +10,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.transform.Translate;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -60,7 +57,7 @@ public class HelloController implements Initializable {
 
         transition1.setOnFinished( event -> { // after the transition is finished
             transition2.setNode(gameLabel);
-            transition2.setDuration(Duration.millis(2000));
+            transition2.setDuration(Duration.millis(1000));
             transition2.setByY(-480);
             transition2.play();
         } );
@@ -96,19 +93,26 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    public void onInfoButton(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(null);
-        alert.setContentText(null);
-        alert.getDialogPane().getStylesheets().add(
-                getClass().getResource("alertStyle.css").toExternalForm());
+    public void onInfoButton(ActionEvent event) throws IOException{
 
-        alert.setHeaderText("Developed by: Sarwat Aijaz");
-        alert.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DialogLayout.fxml"));
+        Parent dialogContent = fxmlLoader.load();
+
+        DialogController controller = fxmlLoader.getController();
+        controller.setMyLabel2("Developed by: ");
+        controller.setMyLabel1("Sarwat Aijaz :')");
+        controller.setImage(new Image("D:/playerr.png"), -45,-26);
+
+        // Create a new Stage
+        Stage dialogStage = new Stage();
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+
+
+        dialogStage.setScene(new Scene(dialogContent));
+        dialogStage.showAndWait();
     }
 
     private Stage stage;
-    private Scene scene;
     private Parent root;
     @FXML
     public void onContinueButton(ActionEvent event) throws IOException {

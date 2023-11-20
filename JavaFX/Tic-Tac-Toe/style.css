@@ -29,7 +29,7 @@
 
  .button-play {
     -fx-background-color: #db8686;
-    -fx-border-color: #f65454;
+
  }
  .button-play:hover {
     -fx-background-color: #e0d5d5;
@@ -39,4 +39,25 @@
  }
  .gridCells {
     -fx-background-color: transparent;
+ }
+ .textField-name {
+    -fx-border-color: #dd129d;
+    -fx-border-radius: 50px;
+    -fx-background-color: #e6c8e5;
+    -fx-background-radius: 50px;
+    -fx-text-inner-color: #cc2727;
+ }
+ .pause {
+        -fx-background-color: #e67373;
+         -fx-background-radius: 50px;
+ }
+ .pause:hover {
+         -fx-background-color: #f5f0f0;
+         -fx-background-radius: 50px;
+ }
+ .menuBar {
+    -fx-background-color: #e67373;
+ }
+ .bg {
+    -fx-background-color: #d0c6cd;
  }
